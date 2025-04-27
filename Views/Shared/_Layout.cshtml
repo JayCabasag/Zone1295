@@ -1,0 +1,224 @@
+﻿@using Zone1295.Helpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Zone1295</title>
+    
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+      <div class="announcement-bar">
+        <p>Free worldwide shipping on orders over $150</p>
+      </div>
+      <div class="header-main">
+        <div class="container">
+          <div class="header-wrapper">
+            <div class="logo">
+              <h1>ZONE1295</h1>
+            </div>
+            <nav class="desktop-nav">
+              <ul>
+                <li><a asp-controller="Home" asp-action="Index" class="@Html.IsActive("Home", "Index")">Home</a></li>
+                <li><a asp-controller="Shop" asp-action="Index" class="@Html.IsActive("Shop", "Index")">Shop</a></li>
+                <li><a asp-controller="Shop" asp-action="Collection" class="@Html.IsActive("Shop", "Collection")">Collections</a></li>
+                <li><a asp-controller="Home" asp-action="About" class="@Html.IsActive("Home", "About")">About</a></li>
+                <li><a asp-controller="Home" asp-action="Contact" class="@Html.IsActive("Home", "Contact")">Contact</a></li>
+              </ul>
+            </nav>
+            <div class="header-icons">
+              <a asp-controller="Search" asp-action="Index" class="icon-link"
+                ><i class="fas fa-search"></i
+              ></a>
+              <a asp-controller="Account" asp-action="Index" class="icon-link"
+                ><i class="fas fa-user"></i
+              ></a>
+              <a class="icon-link wishlist-icon"
+                ><i class="fas fa-heart"></i
+                ><span class="wishlist-count">0</span></a
+              >
+              <a class="icon-link cart-icon"
+                ><i class="fas fa-shopping-bag"></i
+                ><span class="cart-count">0</span></a
+              >
+              <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a asp-controller="Home" asp-action="Index" class="@Html.IsActive("Home", "Index")">Home</a></li>
+          <li><a asp-controller="Shop" asp-action="Index" class="@Html.IsActive("Shop", "Shop")">Shop</a></li>
+          <li><a asp-controller="Collection" asp-action="Index" class="@Html.IsActive("Collection", "Index")">Collections</a></li>
+          <li><a asp-controller="Home" asp-action="About" class="@Html.IsActive("Home", "About")">About</a></li>
+          <li><a asp-controller="Home" asp-action="Contact" class="@Html.IsActive("Home", "Contact")">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <h2>ZONE1295</h2>
+            </div>
+            <p>
+              Premium K-Pop merchandise for the true fans. Quality, exclusivity,
+              and luxury in every item.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#">All Products</a></li>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">On Sale</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Authenticity Guarantee</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 ZONE1295. All rights reserved.</p>
+          <div class="payment-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <div class="product-quick-view">
+            <div class="product-quick-img">
+              <img
+                src="https://via.placeholder.com/500x500"
+                alt="Product Image"
+              />
+            </div>
+            <div class="product-quick-info">
+              <h2 class="modal-product-title">Product Title</h2>
+              <p class="modal-product-group">Group Name</p>
+              <p class="modal-product-price">$99.99</p>
+              <p class="modal-product-desc">
+                This premium quality merchandise is exclusively designed for
+                true fans. Limited edition, collector's item.
+              </p>
+              <div class="modal-product-actions">
+                <div class="quantity-selector">
+                  <button class="quantity-btn minus">-</button>
+                  <input type="number" value="1" min="1" max="10" />
+                  <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="btn-primary add-to-cart-btn">Add to Cart</button>
+                <button class="btn-wishlist">
+                  <i class="far fa-heart"></i> Add to Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar">
+      <div class="wishlist-header">
+        <h3>My Wishlist</h3>
+        <button class="close-wishlist">&times;</button>
+      </div>
+      <div class="wishlist-items">
+        <!-- Wishlist items will be added here dynamically -->
+        <div class="empty-wishlist">
+          <i class="far fa-heart"></i>
+          <p>Your wishlist is empty</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-cart">&times;</button>
+      </div>
+      <div class="cart-items">
+        <!-- Cart items will be added here dynamically -->
+        <div class="empty-cart">
+          <i class="fas fa-shopping-bag"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="cart-subtotal">$0.00</span>
+          </div>
+        </div>
+        <div class="cart-actions">
+          <a href="#" class="btn-primary btn-full">Checkout</a>
+          @* <a href="#" class="btn-secondary btn-full">View Cart</a> *@
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

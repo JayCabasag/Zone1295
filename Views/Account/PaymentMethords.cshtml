@@ -1,0 +1,239 @@
+<main>
+  <section class="account-banner">
+    <div class="container">
+      <h1>Payment Methods</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> /
+        <a href="account-dashboard.html">My Account</a> /
+        <span>Payment Methods</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="account-section">
+    <div class="container">
+      <div class="account-layout">
+        <!-- Account Sidebar -->
+        <div class="account-sidebar">
+          <div class="account-user">
+            <div class="user-avatar">
+              <img src="https://via.placeholder.com/80x80" alt="User Avatar" />
+            </div>
+            <div class="user-info">
+              <h3>Jisoo Kim</h3>
+              <p>Premium Member</p>
+            </div>
+          </div>
+          <nav class="account-nav">
+            <ul>
+              <li>
+                <a href="account-dashboard.html"
+                  ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="orders.html"
+                  ><i class="fas fa-shopping-basket"></i> Orders</a
+                >
+              </li>
+              <li>
+                <a href="wishlist.html"
+                  ><i class="fas fa-heart"></i> Wishlist</a
+                >
+              </li>
+              <li>
+                <a href="addresses.html"
+                  ><i class="fas fa-map-marker-alt"></i> Addresses</a
+                >
+              </li>
+              <li class="active">
+                <a href="payment-methods.html"
+                  ><i class="fas fa-credit-card"></i> Payment Methods</a
+                >
+              </li>
+              <li>
+                <a href="account-details.html"
+                  ><i class="fas fa-user-edit"></i> Account Details</a
+                >
+              </li>
+              <li>
+                <a href="rewards.html"><i class="fas fa-gift"></i> Rewards</a>
+              </li>
+              <li>
+                <a href="login.html"
+                  ><i class="fas fa-sign-out-alt"></i> Logout</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Account Content -->
+        <div class="account-content">
+          <div class="payment-header">
+            <h2>Saved Payment Methods</h2>
+            <button class="btn-primary add-payment-btn">
+              <i class="fas fa-plus"></i> Add Payment Method
+            </button>
+          </div>
+
+          <div class="payment-methods-container">
+            <!-- Default Payment Method -->
+            <div class="payment-card default">
+              <div class="payment-badge">Default</div>
+              <div class="payment-icon">
+                <i class="fab fa-cc-visa"></i>
+              </div>
+              <div class="payment-content">
+                <h3>Visa ending in 4567</h3>
+                <p class="payment-details">Expires: 05/2025</p>
+                <p class="payment-name">Jisoo Kim</p>
+              </div>
+              <div class="payment-actions">
+                <button class="btn-text edit-payment">Edit</button>
+                <button class="btn-text remove-payment">Remove</button>
+              </div>
+            </div>
+
+            <!-- Additional Payment Method -->
+            <div class="payment-card">
+              <div class="payment-icon">
+                <i class="fab fa-cc-mastercard"></i>
+              </div>
+              <div class="payment-content">
+                <h3>Mastercard ending in 8901</h3>
+                <p class="payment-details">Expires: 09/2024</p>
+                <p class="payment-name">Jisoo Kim</p>
+              </div>
+              <div class="payment-actions">
+                <button class="btn-text set-default">Set as Default</button>
+                <button class="btn-text edit-payment">Edit</button>
+                <button class="btn-text remove-payment">Remove</button>
+              </div>
+            </div>
+
+            <!-- Additional Payment Method -->
+            <div class="payment-card">
+              <div class="payment-icon">
+                <i class="fab fa-cc-paypal"></i>
+              </div>
+              <div class="payment-content">
+                <h3>PayPal</h3>
+                <p class="payment-details">jisoo.kim@email.com</p>
+              </div>
+              <div class="payment-actions">
+                <button class="btn-text set-default">Set as Default</button>
+                <button class="btn-text remove-payment">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add/Edit Payment Form (hidden by default) -->
+          <div class="payment-form-container" style="display: none">
+            <div class="form-header">
+              <h3>Add New Payment Method</h3>
+              <button class="btn-text close-form">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <form class="payment-form">
+              <div class="form-group">
+                <label for="payment-type">Payment Type</label>
+                <select id="payment-type" class="form-control">
+                  <option value="credit-card">Credit/Debit Card</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+              </div>
+
+              <!-- Credit Card Fields -->
+              <div id="credit-card-fields">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    class="form-control"
+                    placeholder="XXXX XXXX XXXX XXXX"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input
+                      type="text"
+                      id="expiry-date"
+                      class="form-control"
+                      placeholder="MM/YY"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input
+                      type="text"
+                      id="cvv"
+                      class="form-control"
+                      placeholder="XXX"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Name on Card</label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    class="form-control"
+                    placeholder="Full name as shown on card"
+                  />
+                </div>
+              </div>
+
+              <!-- PayPal Fields -->
+              <div id="paypal-fields" style="display: none">
+                <div class="form-group">
+                  <label for="paypal-email">PayPal Email</label>
+                  <input
+                    type="email"
+                    id="paypal-email"
+                    class="form-control"
+                    placeholder="Your PayPal email address"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="default-payment" />
+                  <span class="checkbox-text"
+                    >Set as default payment method</span
+                  >
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                  Save Payment Method
+                </button>
+                <button type="button" class="btn-text cancel-btn">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="payment-info">
+            <div class="info-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Secure Payment Information</h4>
+              <p>
+                Your payment information is securely stored and encrypted. We
+                never store your full card details on our servers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,520 @@
+<section class="page-banner">
+  <div class="container">
+    <h1>Checkout</h1>
+    <p>Complete your purchase</p>
+  </div>
+</section>
+
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-progress">
+      <div class="progress-step active">
+        <div class="step-number">1</div>
+        <div class="step-label">Shipping</div>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="step-number">2</div>
+        <div class="step-label">Payment</div>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="step-number">3</div>
+        <div class="step-label">Review</div>
+      </div>
+    </div>
+
+    <div class="checkout-layout">
+      <div class="checkout-main">
+        <!-- Shipping Step -->
+        <div class="checkout-step active" id="shipping-step">
+          <div class="step-header">
+            <h2>Shipping Information</h2>
+            <p>Enter your shipping details</p>
+          </div>
+
+          <form class="checkout-form" id="shipping-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="address2">Apartment, Suite, etc. (optional)</label>
+              <input type="text" id="address2" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required />
+              </div>
+              <div class="form-group">
+                <label for="state">State/Province</label>
+                <input type="text" id="state" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zip">Postal/ZIP Code</label>
+                <input type="text" id="zip" required />
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" required>
+                  <option value="">Select Country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="JP">Japan</option>
+                  <option value="KR">South Korea</option>
+                  <!-- More countries would be here -->
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-container">
+                <input type="checkbox" id="save-info" />
+                <span class="checkmark"></span>
+                Save this information for next time
+              </label>
+            </div>
+
+            <div class="shipping-options">
+              <h3>Shipping Method</h3>
+
+              <div class="shipping-option">
+                <label class="radio-container">
+                  <input
+                    type="radio"
+                    name="shipping"
+                    value="standard"
+                    checked
+                  />
+                  <span class="radio-mark"></span>
+                  <div class="shipping-option-info">
+                    <div class="shipping-option-name">Standard Shipping</div>
+                    <div class="shipping-option-description">
+                      5-7 business days
+                    </div>
+                  </div>
+                  <div class="shipping-option-price">$12.99</div>
+                </label>
+              </div>
+
+              <div class="shipping-option">
+                <label class="radio-container">
+                  <input type="radio" name="shipping" value="express" />
+                  <span class="radio-mark"></span>
+                  <div class="shipping-option-info">
+                    <div class="shipping-option-name">Express Shipping</div>
+                    <div class="shipping-option-description">
+                      2-3 business days
+                    </div>
+                  </div>
+                  <div class="shipping-option-price">$24.99</div>
+                </label>
+              </div>
+
+              <div class="shipping-option">
+                <label class="radio-container">
+                  <input type="radio" name="shipping" value="overnight" />
+                  <span class="radio-mark"></span>
+                  <div class="shipping-option-info">
+                    <div class="shipping-option-name">Overnight Shipping</div>
+                    <div class="shipping-option-description">
+                      Next business day
+                    </div>
+                  </div>
+                  <div class="shipping-option-price">$39.99</div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <a href="cart.html" class="btn-text">
+                <i class="fas fa-arrow-left"></i> Return to Cart
+              </a>
+              <button type="submit" class="btn-primary continue-btn">
+                Continue to Payment
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Payment Step (Initially Hidden) -->
+        <div class="checkout-step" id="payment-step">
+          <div class="step-header">
+            <h2>Payment Method</h2>
+            <p>Select your preferred payment method</p>
+          </div>
+
+          <form class="checkout-form" id="payment-form">
+            <div class="payment-options">
+              <div class="payment-option">
+                <label class="radio-container">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="credit-card"
+                    checked
+                  />
+                  <span class="radio-mark"></span>
+                  <div class="payment-option-info">
+                    <div class="payment-option-name">Credit / Debit Card</div>
+                    <div class="payment-option-icons">
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                      <i class="fab fa-cc-discover"></i>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="payment-option">
+                <label class="radio-container">
+                  <input type="radio" name="payment" value="paypal" />
+                  <span class="radio-mark"></span>
+                  <div class="payment-option-info">
+                    <div class="payment-option-name">PayPal</div>
+                    <div class="payment-option-icons">
+                      <i class="fab fa-paypal"></i>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="credit-card-form">
+              <div class="form-group">
+                <label for="card-name">Name on Card</label>
+                <input type="text" id="card-name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <div class="card-number-input">
+                  <input
+                    type="text"
+                    id="card-number"
+                    placeholder="1234 5678 9012 3456"
+                    required
+                  />
+                  <div class="card-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expiry-date">Expiry Date</label>
+                  <input
+                    type="text"
+                    id="expiry-date"
+                    placeholder="MM/YY"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" placeholder="123" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="save-card" />
+                  <span class="checkmark"></span>
+                  Save this card for future purchases
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group billing-address">
+              <h3>Billing Address</h3>
+              <label class="checkbox-container">
+                <input type="checkbox" id="same-address" checked />
+                <span class="checkmark"></span>
+                Same as shipping address
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-text back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Shipping
+              </button>
+              <button type="submit" class="btn-primary continue-btn">
+                Review Order
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Review Step (Initially Hidden) -->
+        <div class="checkout-step" id="review-step">
+          <div class="step-header">
+            <h2>Review Your Order</h2>
+            <p>Please review your order details before placing your order</p>
+          </div>
+
+          <div class="review-sections">
+            <div class="review-section">
+              <div class="review-section-header">
+                <h3>Shipping Information</h3>
+                <button class="btn-text edit-btn" data-step="shipping">
+                  Edit
+                </button>
+              </div>
+              <div class="review-section-content" id="review-shipping">
+                <p class="review-name">Jessica Kim</p>
+                <p class="review-address">123 K-Pop Street, Apt 7</p>
+                <p class="review-city-state">Seoul, SK 12345</p>
+                <p class="review-country">South Korea</p>
+                <p class="review-email">jessica@example.com</p>
+                <p class="review-phone">+82 10 1234 5678</p>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <div class="review-section-header">
+                <h3>Payment Method</h3>
+                <button class="btn-text edit-btn" data-step="payment">
+                  Edit
+                </button>
+              </div>
+              <div class="review-section-content" id="review-payment">
+                <p class="review-payment-method">
+                  <i class="fab fa-cc-visa"></i> Visa ending in 4242
+                </p>
+                <p class="review-billing">Billing address same as shipping</p>
+              </div>
+            </div>
+
+            <div class="review-section">
+              <div class="review-section-header">
+                <h3>Shipping Method</h3>
+                <button class="btn-text edit-btn" data-step="shipping">
+                  Edit
+                </button>
+              </div>
+              <div class="review-section-content" id="review-shipping-method">
+                <p class="review-shipping-method">
+                  Standard Shipping (5-7 business days)
+                </p>
+                <p class="review-shipping-cost">$12.99</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-items">
+            <h3>Order Items (3)</h3>
+
+            <div class="review-item">
+              <div class="review-item-image">
+                <img src="https://via.placeholder.com/80x80" alt="BTS Album" />
+              </div>
+              <div class="review-item-info">
+                <h4>BTS - Proof (Standard Edition)</h4>
+                <div class="review-item-meta">
+                  <span>Qty: 1</span>
+                </div>
+              </div>
+              <div class="review-item-price">$45.99</div>
+            </div>
+
+            <div class="review-item">
+              <div class="review-item-image">
+                <img
+                  src="https://via.placeholder.com/80x80"
+                  alt="BLACKPINK Photocard"
+                />
+              </div>
+              <div class="review-item-info">
+                <h4>BLACKPINK - Lisa Photocard Set (Limited Edition)</h4>
+                <div class="review-item-meta">
+                  <span>Qty: 2</span>
+                </div>
+              </div>
+              <div class="review-item-price">$49.98</div>
+            </div>
+
+            <div class="review-item">
+              <div class="review-item-image">
+                <img
+                  src="https://via.placeholder.com/80x80"
+                  alt="TWICE Lightstick"
+                />
+              </div>
+              <div class="review-item-info">
+                <h4>TWICE - Official Lightstick (Candy Bong Z)</h4>
+                <div class="review-item-meta">
+                  <span>Qty: 1</span>
+                </div>
+              </div>
+              <div class="review-item-price">$59.99</div>
+            </div>
+          </div>
+
+          <div class="form-group terms-conditions">
+            <label class="checkbox-container">
+              <input type="checkbox" id="terms" required />
+              <span class="checkmark"></span>
+              I agree to the <a href="#">Terms and Conditions</a> and
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-text back-btn">
+              <i class="fas fa-arrow-left"></i> Back to Payment
+            </button>
+            <button type="button" class="btn-primary place-order-btn">
+              Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-sidebar">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+
+          <div class="summary-items">
+            <div class="summary-item">
+              <div class="summary-item-image">
+                <img src="https://via.placeholder.com/60x60" alt="BTS Album" />
+                <span class="summary-item-quantity">1</span>
+              </div>
+              <div class="summary-item-info">
+                <h4>BTS - Proof (Standard Edition)</h4>
+              </div>
+              <div class="summary-item-price">$45.99</div>
+            </div>
+
+            <div class="summary-item">
+              <div class="summary-item-image">
+                <img
+                  src="https://via.placeholder.com/60x60"
+                  alt="BLACKPINK Photocard"
+                />
+                <span class="summary-item-quantity">2</span>
+              </div>
+              <div class="summary-item-info">
+                <h4>BLACKPINK - Lisa Photocard Set</h4>
+              </div>
+              <div class="summary-item-price">$49.98</div>
+            </div>
+
+            <div class="summary-item">
+              <div class="summary-item-image">
+                <img
+                  src="https://via.placeholder.com/60x60"
+                  alt="TWICE Lightstick"
+                />
+                <span class="summary-item-quantity">1</span>
+              </div>
+              <div class="summary-item-info">
+                <h4>TWICE - Official Lightstick</h4>
+              </div>
+              <div class="summary-item-price">$59.99</div>
+            </div>
+          </div>
+
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>$155.96</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span>$12.99</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Tax</span>
+              <span>$15.60</span>
+            </div>
+
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <span>$184.55</span>
+            </div>
+          </div>
+
+          <div class="promo-code">
+            <div class="promo-code-header">
+              <button class="btn-text promo-toggle">
+                <i class="fas fa-tag"></i> Have a promo code?
+              </button>
+            </div>
+            <div class="promo-code-form" style="display: none">
+              <input type="text" placeholder="Enter promo code" />
+              <button class="btn-secondary apply-promo">Apply</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-notes">
+          <div class="checkout-note">
+            <i class="fas fa-lock"></i>
+            <div>
+              <h4>Secure Checkout</h4>
+              <p>Your payment information is encrypted and secure.</p>
+            </div>
+          </div>
+
+          <div class="checkout-note">
+            <i class="fas fa-undo"></i>
+            <div>
+              <h4>30-Day Returns</h4>
+              <p>Return any item within 30 days for a full refund.</p>
+            </div>
+          </div>
+
+          <div class="checkout-note">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <h4>Authenticity Guarantee</h4>
+              <p>All items are 100% authentic and officially licensed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="need-help">
+          <h4>Need Help?</h4>
+          <p>Our customer service team is available 24/7.</p>
+          <a href="contact.html" class="btn-text">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

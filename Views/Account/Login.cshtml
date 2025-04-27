@@ -1,0 +1,211 @@
+<section class="page-banner">
+  <div class="container">
+    <h1>My Account</h1>
+    <p>Login or create an account</p>
+  </div>
+</section>
+
+<section class="account-section">
+  <div class="container">
+    <div class="account-container">
+      <div class="account-tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="register">Register</button>
+      </div>
+
+      <div class="tab-content">
+        <!-- Login Form -->
+        <div class="tab-pane active" id="login">
+          <form class="account-form login-form">
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="password-field">
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-options">
+              <span class="checkbox-container">
+                <input type="checkbox" id="remember-me" />
+                <label class="remember-me" for="remember-me">Remember</label>
+              </span>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Login</button>
+
+            <div class="social-login">
+              <p>Or login with</p>
+              <div class="social-login-buttons">
+                <button type="button" class="social-btn google">
+                  <i class="fab fa-google"></i>
+                  <span>Google</span>
+                </button>
+                <button type="button" class="social-btn facebook">
+                  <i class="fab fa-facebook-f"></i>
+                  <span>Facebook</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Register Form -->
+        <div class="tab-pane" id="register">
+          <form class="account-form register-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  placeholder="Enter your first name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  placeholder="Enter your last name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="register-email">Email Address</label>
+              <input
+                type="email"
+                id="register-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="register-password">Password</label>
+              <div class="password-field">
+                <input
+                  type="password"
+                  id="register-password"
+                  placeholder="Create a password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+              <div class="password-strength">
+                <div class="strength-meter">
+                  <div class="strength-bar"></div>
+                </div>
+                <p class="strength-text">
+                  Password strength: <span>Weak</span>
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="password-field">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="Confirm your password"
+                  required
+                />
+                <button type="button" class="toggle-password">
+                  <i class="far fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-container">
+                <input type="checkbox" required />
+                <span class="checkmark"></span>
+                I agree to the <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Subscribe to our newsletter for exclusive offers and updates
+              </label>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="account-benefits">
+      <h3>Benefits of Creating an Account</h3>
+      <ul class="benefits-list">
+        <li>
+          <i class="fas fa-truck"></i>
+          <div>
+            <h4>Faster Checkout</h4>
+            <p>
+              Save your shipping and payment information for a quicker checkout
+            </p>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-history"></i>
+          <div>
+            <h4>Order History</h4>
+            <p>View and track all your orders in one place</p>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-heart"></i>
+          <div>
+            <h4>Wishlist</h4>
+            <p>Save your favorite items to purchase later</p>
+          </div>
+        </li>
+        <li>
+          <i class="fas fa-tag"></i>
+          <div>
+            <h4>Exclusive Offers</h4>
+            <p>Receive special discounts and early access to new releases</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-content">
+      <h2>Join Our VIP List</h2>
+      <p>
+        Be the first to know about new releases, exclusive offers, and limited
+        editions
+      </p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

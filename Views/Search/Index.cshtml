@@ -1,0 +1,393 @@
+<section class="search-hero">
+  <div class="container">
+    <div class="search-container">
+      <h1>Search Our Store</h1>
+      <div class="search-form">
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="What are you looking for?"
+            autofocus
+          />
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="popular-searches">
+        <p>Popular searches:</p>
+        <div class="search-tags">
+          <a href="#" class="search-tag">BTS</a>
+          <a href="#" class="search-tag">BLACKPINK</a>
+          <a href="#" class="search-tag">TWICE</a>
+          <a href="#" class="search-tag">Photocard</a>
+          <a href="#" class="search-tag">Album</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="search-results-section">
+  <div class="container">
+    <div class="search-results-header">
+      <h2>Search Results for "<span class="search-term">BTS</span>"</h2>
+      <p class="results-count">24 products found</p>
+    </div>
+
+    <div class="search-layout">
+      <div class="search-filters">
+        <div class="filter-header">
+          <h3>Filters</h3>
+          <button class="clear-filters">Clear All</button>
+        </div>
+
+        <div class="filter-group">
+          <h4>Categories</h4>
+          <div class="filter-options">
+            <label class="checkbox-container">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              Albums (8)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              Photocards (6)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Apparel (5)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Accessories (3)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Lightsticks (2)
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Price Range</h4>
+          <div class="price-slider">
+            <div class="price-range">
+              <div class="price-range-bar"></div>
+              <div class="price-range-handle left"></div>
+              <div class="price-range-handle right"></div>
+            </div>
+            <div class="price-inputs">
+              <div class="price-input">
+                <span>$</span>
+                <input
+                  type="number"
+                  min="0"
+                  max="500"
+                  value="0"
+                  class="min-price"
+                />
+              </div>
+              <span class="price-separator">-</span>
+              <div class="price-input">
+                <span>$</span>
+                <input
+                  type="number"
+                  min="0"
+                  max="500"
+                  value="200"
+                  class="max-price"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Artists</h4>
+          <div class="filter-options">
+            <label class="checkbox-container">
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+              BTS (24)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              BLACKPINK (18)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              TWICE (15)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              EXO (12)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              SEVENTEEN (10)
+            </label>
+          </div>
+          <button class="show-more">Show More</button>
+        </div>
+
+        <div class="filter-group">
+          <h4>Availability</h4>
+          <div class="filter-options">
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              In Stock (20)
+            </label>
+            <label class="checkbox-container">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Pre-Order (4)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-results">
+        <div class="results-toolbar">
+          <div class="sort-options">
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by">
+              <option value="relevance">Relevance</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="bestselling">Best Selling</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-product">
+          <!-- Product 1 -->
+          <div class="product-item">
+            <div class="product-image-container">
+              <a href="product-details.html" class="product-link">
+                <img
+                  src="https://placehold.co/300x300"
+                  alt="BTS Album"
+                  class="product-image"
+                />
+              </a>
+              <div class="product-badge new">New</div>
+              <div class="product-actions">
+                <button
+                  class="action-button quick-view"
+                  aria-label="Quick View"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="action-button wishlist"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button cart" aria-label="Add to Cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">
+                <a href="product-details.html"
+                  >BTS - Proof (Standard Edition)</a
+                >
+              </h3>
+              <div class="product-meta">
+                <div class="product-price">$45.99</div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="rating-count">(42)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-item">
+            <div class="product-image-container">
+              <a href="product-details.html" class="product-link">
+                <img
+                  src="https://placehold.co/300x300"
+                  alt="BTS Photocard"
+                  class="product-image"
+                />
+              </a>
+              <div class="product-badge sale">Sale</div>
+              <div class="product-actions">
+                <button
+                  class="action-button quick-view"
+                  aria-label="Quick View"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="action-button wishlist"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button cart" aria-label="Add to Cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">
+                <a href="product-details.html"
+                  >BTS - Jungkook Photocard Set (Limited Edition)</a
+                >
+              </h3>
+              <div class="product-meta">
+                <div class="product-price">
+                  <span class="old-price">$24.99</span>
+                  <span class="current-price">$19.99</span>
+                </div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-count">(67)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-item">
+            <div class="product-image-container">
+              <a href="product-details.html" class="product-link">
+                <img
+                  src="https://placehold.co/300x300"
+                  alt="BTS T-Shirt"
+                  class="product-image"
+                />
+              </a>
+              <div class="product-actions">
+                <button
+                  class="action-button quick-view"
+                  aria-label="Quick View"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="action-button wishlist"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button cart" aria-label="Add to Cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">
+                <a href="product-details.html">BTS - Butter Concept T-Shirt</a>
+              </h3>
+              <div class="product-meta">
+                <div class="product-price">$32.50</div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <span class="rating-count">(28)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-item">
+            <div class="product-image-container">
+              <a href="product-details.html" class="product-link">
+                <img
+                  src="https://placehold.co/300x300"
+                  alt="BTS Album"
+                  class="product-image"
+                />
+              </a>
+              <div class="product-badge limited">Limited</div>
+              <div class="product-actions">
+                <button
+                  class="action-button quick-view"
+                  aria-label="Quick View"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button
+                  class="action-button wishlist"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="action-button cart" aria-label="Add to Cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <h3 class="product-name">
+                <a href="product-details.html"
+                  >BTS - Map of the Soul: 7 (Deluxe Edition)</a
+                >
+              </h3>
+              <div class="product-meta">
+                <div class="product-price">$59.99</div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="rating-count">(103)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="page-link active">1</a>
+          <a href="#" class="page-link">2</a>
+          <a href="#" class="page-link">3</a>
+          <span class="page-dots">...</span>
+          <a href="#" class="page-link">6</a>
+          <a href="#" class="page-link next">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

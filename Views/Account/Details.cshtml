@@ -1,0 +1,312 @@
+<section class="account-banner">
+  <div class="container">
+    <h1>Account Details</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> /
+      <a href="account-dashboard.html">My Account</a> /
+      <span>Account Details</span>
+    </div>
+  </div>
+</section>
+
+<section class="account-section">
+  <div class="container">
+    <div class="account-layout">
+      <!-- Account Sidebar -->
+      <div class="account-sidebar">
+        <div class="account-user">
+          <div class="user-avatar">
+            <img src="https://via.placeholder.com/80x80" alt="User Avatar" />
+          </div>
+          <div class="user-info">
+            <h3>Jisoo Kim</h3>
+            <p>Premium Member</p>
+          </div>
+        </div>
+        <nav class="account-nav">
+          <ul>
+            <li>
+              <a href="account-dashboard.html"
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="orders.html"
+                ><i class="fas fa-shopping-basket"></i> Orders</a
+              >
+            </li>
+            <li>
+              <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            </li>
+            <li>
+              <a href="addresses.html"
+                ><i class="fas fa-map-marker-alt"></i> Addresses</a
+              >
+            </li>
+            <li>
+              <a href="payment-methods.html"
+                ><i class="fas fa-credit-card"></i> Payment Methods</a
+              >
+            </li>
+            <li class="active">
+              <a href="account-details.html"
+                ><i class="fas fa-user-edit"></i> Account Details</a
+              >
+            </li>
+            <li>
+              <a href="rewards.html"><i class="fas fa-gift"></i> Rewards</a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fas fa-sign-out-alt"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Account Content -->
+      <div class="account-content">
+        <div class="account-details-container">
+          <div class="profile-section">
+            <div class="profile-header">
+              <h2>Profile Information</h2>
+              <button class="btn-text edit-profile">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+            <div class="profile-content">
+              <div class="profile-avatar">
+                <img
+                  src="https://via.placeholder.com/150x150"
+                  alt="User Avatar"
+                />
+                <button class="change-avatar-btn">
+                  <i class="fas fa-camera"></i>
+                </button>
+              </div>
+              <div class="profile-info">
+                <div class="info-row">
+                  <div class="info-label">Name</div>
+                  <div class="info-value">Jisoo Kim</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Email</div>
+                  <div class="info-value">jisoo.kim@email.com</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Phone</div>
+                  <div class="info-value">+82 10-1234-5678</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Date of Birth</div>
+                  <div class="info-value">January 3, 1995</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-label">Gender</div>
+                  <div class="info-value">Female</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preferences-section">
+            <div class="preferences-header">
+              <h2>Preferences</h2>
+              <button class="btn-text edit-preferences">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+            <div class="preferences-content">
+              <div class="info-row">
+                <div class="info-label">Language</div>
+                <div class="info-value">English</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">Currency</div>
+                <div class="info-value">USD ($)</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">Favorite Artists</div>
+                <div class="info-value">BTS, BLACKPINK, TWICE</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">Email Notifications</div>
+                <div class="info-value">
+                  <span class="badge enabled">Order Updates</span>
+                  <span class="badge enabled">Promotions</span>
+                  <span class="badge disabled">Newsletter</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="security-section">
+            <div class="security-header">
+              <h2>Security</h2>
+            </div>
+            <div class="security-content">
+              <div class="security-item">
+                <div class="security-info">
+                  <h3>Password</h3>
+                  <p>Last changed: 2 months ago</p>
+                </div>
+                <button class="btn-secondary change-password-btn">
+                  Change Password
+                </button>
+              </div>
+              <div class="security-item">
+                <div class="security-info">
+                  <h3>Two-Factor Authentication</h3>
+                  <p>Add an extra layer of security to your account</p>
+                </div>
+                <button class="btn-secondary enable-2fa-btn">Enable</button>
+              </div>
+              <div class="security-item">
+                <div class="security-info">
+                  <h3>Login History</h3>
+                  <p>View your recent login activity</p>
+                </div>
+                <button class="btn-text view-history-btn">View History</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="danger-zone">
+            <h2>Danger Zone</h2>
+            <div class="danger-content">
+              <div class="danger-item">
+                <div class="danger-info">
+                  <h3>Delete Account</h3>
+                  <p>Permanently delete your account and all associated data</p>
+                </div>
+                <button class="btn-danger delete-account-btn">
+                  Delete Account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Profile Form (hidden by default) -->
+        <div class="profile-form-container" style="display: none">
+          <div class="form-header">
+            <h3>Edit Profile</h3>
+            <button class="btn-text close-form">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  class="form-control"
+                  value="Jisoo"
+                />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  class="form-control"
+                  value="Kim"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                value="jisoo.kim@email.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-control"
+                value="+82 10-1234-5678"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="birth-date">Date of Birth</label>
+                <input
+                  type="date"
+                  id="birth-date"
+                  class="form-control"
+                  value="1995-01-03"
+                />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" class="form-control">
+                  <option value="female" selected>Female</option>
+                  <option value="male">Male</option>
+                  <option value="other">Other</option>
+                  <option value="prefer-not">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Save Changes</button>
+              <button type="button" class="btn-text cancel-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Change Password Form (hidden by default) -->
+        <div class="password-form-container" style="display: none">
+          <div class="form-header">
+            <h3>Change Password</h3>
+            <button class="btn-text close-form">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form class="password-form">
+            <div class="form-group">
+              <label for="current-password">Current Password</label>
+              <input
+                type="password"
+                id="current-password"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label for="new-password">New Password</label>
+              <input type="password" id="new-password" class="form-control" />
+              <div class="password-strength">
+                <div class="strength-meter">
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                </div>
+                <span class="strength-text">Password strength: Weak</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm New Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                class="form-control"
+              />
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Update Password</button>
+              <button type="button" class="btn-text cancel-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

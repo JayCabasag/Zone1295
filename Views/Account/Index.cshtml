@@ -1,0 +1,207 @@
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <h1>My Account</h1>
+      <p>Welcome back, <span class="user-name">Jessica</span></p>
+    </div>
+  </section>
+
+  <section class="dashboard-section">
+    <div class="container">
+      <div class="dashboard-layout">
+        <div class="dashboard-sidebar">
+          <div class="user-info">
+            <div class="user-avatar">
+              <img src="https://placehold.co/80x80" alt="User Avatar" />
+              <button class="edit-avatar">
+                <i class="fas fa-camera"></i>
+              </button>
+            </div>
+            <h3>Jessica Kim</h3>
+            <p>Member since August 2023</p>
+            <div class="membership-level">
+              <span class="level gold">Gold Member</span>
+            </div>
+          </div>
+          <nav class="dashboard-nav">
+            <ul>
+              <li class="active">
+                <a href="#dashboard"
+                  ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="#orders"><i class="fas fa-shopping-bag"></i> Orders</a>
+              </li>
+              <li>
+                <a href="#wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+              </li>
+              <li>
+                <a href="#addresses"
+                  ><i class="fas fa-map-marker-alt"></i> Addresses</a
+                >
+              </li>
+              <li>
+                <a href="#payment-methods"
+                  ><i class="fas fa-credit-card"></i> Payment Methods</a
+                >
+              </li>
+              <li>
+                <a href="#account-details"
+                  ><i class="fas fa-user-edit"></i> Account Details</a
+                >
+              </li>
+              <li>
+                <a href="#rewards"><i class="fas fa-gift"></i> Rewards</a>
+              </li>
+              <li class="logout">
+                <a href="login.html"
+                  ><i class="fas fa-sign-out-alt"></i> Logout</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="dashboard-content">
+          <!-- Dashboard Overview -->
+          <div class="dashboard-panel active" id="dashboard-panel">
+            <div class="welcome-banner">
+              <div class="welcome-content">
+                <h2>Welcome to your account, Jessica!</h2>
+                <p>
+                  From your account dashboard, you can view your recent orders,
+                  manage your shipping and billing addresses, and edit your
+                  password and account details.
+                </p>
+              </div>
+              <div class="welcome-image">
+                <img src="https://placehold.co/200x150" alt="Welcome" />
+              </div>
+            </div>
+
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="stat-info">
+                  <h3>5</h3>
+                  <p>Orders Placed</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div class="stat-info">
+                  <h3>12</h3>
+                  <p>Wishlist Items</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-info">
+                  <h3>3</h3>
+                  <p>Reviews</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <div class="stat-info">
+                  <h3>250</h3>
+                  <p>Reward Points</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="recent-orders">
+              <div class="section-header">
+                <h3>Recent Orders</h3>
+                <a href="#orders" class="view-all">View All</a>
+              </div>
+              <div class="orders-table-wrapper">
+                <table class="orders-table">
+                  <thead>
+                    <tr>
+                      <th>Order</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Total</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#LK10045</td>
+                      <td>April 15, 2023</td>
+                      <td>
+                        <span class="status delivered">Delivered</span>
+                      </td>
+                      <td>$125.00</td>
+                      <td><a href="#" class="btn-text">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>#LK10039</td>
+                      <td>March 28, 2023</td>
+                      <td>
+                        <span class="status delivered">Delivered</span>
+                      </td>
+                      <td>$89.50</td>
+                      <td><a href="#" class="btn-text">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>#LK10027</td>
+                      <td>February 12, 2023</td>
+                      <td>
+                        <span class="status delivered">Delivered</span>
+                      </td>
+                      <td>$210.75</td>
+                      <td><a href="#" class="btn-text">View</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="dashboard-sections">
+              <div class="dashboard-section-card">
+                <div class="section-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3>Wishlist</h3>
+                <p>View and manage your saved items</p>
+                <a href="#wishlist" class="btn-secondary">View Wishlist</a>
+              </div>
+              <div class="dashboard-section-card">
+                <div class="section-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Addresses</h3>
+                <p>Manage your shipping addresses</p>
+                <a href="#addresses" class="btn-secondary">Manage Addresses</a>
+              </div>
+              <div class="dashboard-section-card">
+                <div class="section-icon">
+                  <i class="fas fa-user-edit"></i>
+                </div>
+                <h3>Account Details</h3>
+                <p>Update your personal information</p>
+                <a href="#account-details" class="btn-secondary"
+                  >Edit Details</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Other panels would be here but are hidden by default -->
+          <!-- Orders Panel, Wishlist Panel, etc. -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

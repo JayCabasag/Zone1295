@@ -1,0 +1,326 @@
+<section class="account-banner">
+  <div class="container">
+    <h1>My Orders</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> /
+      <a href="account-dashboard.html">My Account</a> /
+      <span>Orders</span>
+    </div>
+  </div>
+</section>
+
+<section class="account-section">
+  <div class="container">
+    <div class="account-layout">
+      <!-- Account Sidebar -->
+      <div class="account-sidebar">
+        <div class="account-user">
+          <div class="user-avatar">
+            <img src="https://via.placeholder.com/80x80" alt="User Avatar" />
+          </div>
+          <div class="user-info">
+            <h3>Jisoo Kim</h3>
+            <p>Premium Member</p>
+          </div>
+        </div>
+        <nav class="account-nav">
+          <ul>
+            <li>
+              <a href="account-dashboard.html"
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li class="active">
+              <a href="orders.html"
+                ><i class="fas fa-shopping-basket"></i> Orders</a
+              >
+            </li>
+            <li>
+              <a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a>
+            </li>
+            <li>
+              <a href="addresses.html"
+                ><i class="fas fa-map-marker-alt"></i> Addresses</a
+              >
+            </li>
+            <li>
+              <a href="payment-methods.html"
+                ><i class="fas fa-credit-card"></i> Payment Methods</a
+              >
+            </li>
+            <li>
+              <a href="account-details.html"
+                ><i class="fas fa-user-edit"></i> Account Details</a
+              >
+            </li>
+            <li>
+              <a href="rewards.html"><i class="fas fa-gift"></i> Rewards</a>
+            </li>
+            <li>
+              <a href="login.html"
+                ><i class="fas fa-sign-out-alt"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Account Content -->
+      <div class="account-content">
+        <div class="orders-header">
+          <h2>Order History</h2>
+          <div class="orders-filter">
+            <select class="form-select">
+              <option value="all">All Orders</option>
+              <option value="processing">Processing</option>
+              <option value="shipped">Shipped</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="orders-list">
+          <!-- Order 1 -->
+          <div class="order-item">
+            <div class="order-header">
+              <div class="order-info">
+                <div class="order-number">
+                  <span class="label">Order #:</span>
+                  <span class="value">LK-10045782</span>
+                </div>
+                <div class="order-date">
+                  <span class="label">Date:</span>
+                  <span class="value">April 15, 2023</span>
+                </div>
+                <div class="order-total">
+                  <span class="label">Total:</span>
+                  <span class="value">$184.55</span>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge delivered">Delivered</span>
+                </div>
+              </div>
+              <div class="order-actions">
+                <button class="btn-text toggle-details">
+                  <span class="show-text">View Details</span>
+                  <span class="hide-text">Hide Details</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <div class="order-details">
+              <div class="order-products">
+                <h4>Products</h4>
+                <div class="order-product-list">
+                  <div class="order-product">
+                    <div class="product-image">
+                      <img
+                        src="https://via.placeholder.com/80x80"
+                        alt="BTS Album"
+                      />
+                    </div>
+                    <div class="product-details">
+                      <h5>BTS - Proof (Standard Edition)</h5>
+                      <div class="product-meta">
+                        <span>Qty: 1</span>
+                        <span>$45.99</span>
+                      </div>
+                    </div>
+                    <div class="product-actions">
+                      <button class="btn-text">Buy Again</button>
+                      <button class="btn-text">Add to Wishlist</button>
+                    </div>
+                  </div>
+                  <div class="order-product">
+                    <div class="product-image">
+                      <img
+                        src="https://via.placeholder.com/80x80"
+                        alt="BLACKPINK Photocard"
+                      />
+                    </div>
+                    <div class="product-details">
+                      <h5>BLACKPINK - Lisa Photocard Set (Limited Edition)</h5>
+                      <div class="product-meta">
+                        <span>Qty: 2</span>
+                        <span>$49.98</span>
+                      </div>
+                    </div>
+                    <div class="product-actions">
+                      <button class="btn-text">Buy Again</button>
+                      <button class="btn-text">Add to Wishlist</button>
+                    </div>
+                  </div>
+                  <div class="order-product">
+                    <div class="product-image">
+                      <img
+                        src="https://via.placeholder.com/80x80"
+                        alt="TWICE Lightstick"
+                      />
+                    </div>
+                    <div class="product-details">
+                      <h5>TWICE - Official Lightstick (Candy Bong Z)</h5>
+                      <div class="product-meta">
+                        <span>Qty: 1</span>
+                        <span>$59.99</span>
+                      </div>
+                    </div>
+                    <div class="product-actions">
+                      <button class="btn-text">Buy Again</button>
+                      <button class="btn-text">Add to Wishlist</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div class="summary-row">
+                  <span>Subtotal</span>
+                  <span>$155.96</span>
+                </div>
+                <div class="summary-row">
+                  <span>Shipping</span>
+                  <span>$12.99</span>
+                </div>
+                <div class="summary-row">
+                  <span>Tax</span>
+                  <span>$15.60</span>
+                </div>
+                <div class="summary-row total">
+                  <span>Total</span>
+                  <span>$184.55</span>
+                </div>
+              </div>
+              <div class="order-shipping">
+                <h4>Shipping Information</h4>
+                <p>
+                  <strong>Address:</strong> 123 K-Pop Street, Apt 7, Seoul,
+                  South Korea, 02841
+                </p>
+                <p><strong>Shipping Method:</strong> Standard Shipping</p>
+                <p><strong>Tracking Number:</strong> LK123456789</p>
+                <a href="#" class="btn-secondary track-order">Track Order</a>
+              </div>
+              <div class="order-actions-bottom">
+                <a href="#" class="btn-primary">View Invoice</a>
+                <a href="contact.html" class="btn-text">Need Help?</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order 2 -->
+          <div class="order-item">
+            <div class="order-header">
+              <div class="order-info">
+                <div class="order-number">
+                  <span class="label">Order #:</span>
+                  <span class="value">LK-10045621</span>
+                </div>
+                <div class="order-date">
+                  <span class="label">Date:</span>
+                  <span class="value">March 28, 2023</span>
+                </div>
+                <div class="order-total">
+                  <span class="label">Total:</span>
+                  <span class="value">$89.97</span>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge shipped">Shipped</span>
+                </div>
+              </div>
+              <div class="order-actions">
+                <button class="btn-text toggle-details">
+                  <span class="show-text">View Details</span>
+                  <span class="hide-text">Hide Details</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <div class="order-details">
+              <!-- Order details content would go here -->
+            </div>
+          </div>
+
+          <!-- Order 3 -->
+          <div class="order-item">
+            <div class="order-header">
+              <div class="order-info">
+                <div class="order-number">
+                  <span class="label">Order #:</span>
+                  <span class="value">LK-10045498</span>
+                </div>
+                <div class="order-date">
+                  <span class="label">Date:</span>
+                  <span class="value">March 10, 2023</span>
+                </div>
+                <div class="order-total">
+                  <span class="label">Total:</span>
+                  <span class="value">$129.99</span>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge processing">Processing</span>
+                </div>
+              </div>
+              <div class="order-actions">
+                <button class="btn-text toggle-details">
+                  <span class="show-text">View Details</span>
+                  <span class="hide-text">Hide Details</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <div class="order-details">
+              <!-- Order details content would go here -->
+            </div>
+          </div>
+
+          <!-- Order 4 -->
+          <div class="order-item">
+            <div class="order-header">
+              <div class="order-info">
+                <div class="order-number">
+                  <span class="label">Order #:</span>
+                  <span class="value">LK-10045312</span>
+                </div>
+                <div class="order-date">
+                  <span class="label">Date:</span>
+                  <span class="value">February 22, 2023</span>
+                </div>
+                <div class="order-total">
+                  <span class="label">Total:</span>
+                  <span class="value">$75.50</span>
+                </div>
+                <div class="order-status">
+                  <span class="status-badge cancelled">Cancelled</span>
+                </div>
+              </div>
+              <div class="order-actions">
+                <button class="btn-text toggle-details">
+                  <span class="show-text">View Details</span>
+                  <span class="hide-text">Hide Details</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <div class="order-details">
+              <!-- Order details content would go here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn prev" disabled>
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
