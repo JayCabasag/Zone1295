@@ -24,6 +24,9 @@ public class ProductController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var model = new ProductViewModel{
+            Menu = "shop",
+            MenuTitle = "Shop",
+            SubMenu = "",
             Product = await _productRepository.GetByIdAsync(id),
         };
         return View(model);

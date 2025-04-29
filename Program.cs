@@ -5,6 +5,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<DbConnectionFactory>();
 builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<ArtistRepository>();
 
 var app = builder.Build();
 

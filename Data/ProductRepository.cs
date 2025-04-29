@@ -10,7 +10,7 @@ public class ProductRepository
         _connectionFactory = connectionFactory;
     }
 
-        public async Task<Product?> GetByIdAsync(int productId)
+    public async Task<Product?> GetByIdAsync(int productId)
     {
         try {
             using var connection = _connectionFactory.CreateConnection();
@@ -60,7 +60,7 @@ public class ProductRepository
             }
     }
 
-    public async Task<int> GetAllProductsPagedCountAsync(ProductQueryModel queryModel)
+    public async Task<int> GetAllProductsPagedCountAsync(QueryModel queryModel)
     {
         try
         {
@@ -95,7 +95,7 @@ public class ProductRepository
         }
     }
 
-    public async Task<List<Product>> GetAllProductsPagedAsync(ProductQueryModel queryModel)
+    public async Task<List<Product>> GetAllProductsPagedAsync(QueryModel queryModel)
     {
         var products = new List<Product>();
         

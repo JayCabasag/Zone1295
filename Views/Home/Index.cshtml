@@ -1,4 +1,6 @@
-﻿@{ ViewData["Title"] = "Home Page"; }
+﻿@using Zone1295.Models;
+
+@{ ViewData["Title"] = "Home Page"; }
 
 <section class="hero-slider">
    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
@@ -47,46 +49,29 @@
 <section class="categories">
   <div class="container">
     <div class="section-header">
-      <h2>Shop By Category</h2>
+      <h2>Shop By Your Favorite Artists</h2>
       <p>Find your favorite group's exclusive merchandise</p>
     </div>
-    <div class="category-filters">
+    @* <div class="category-filters">
       <button class="category-btn active" data-filter="all">All Groups</button>
       <button class="category-btn" data-filter="new-arrivals">
         New Arrivals
       </button>
       <button class="category-btn" data-filter="popular">Popular</button>
       <button class="category-btn" data-filter="most-loved">Most Loved</button>
-    </div>
+    </div> *@
     <div class="category-grid">
-      <div class="category-card">
-        <div class="category-img">
-          <img src="https://placehold.co/300x400" alt="BLACKPINK Merchandise" />
-        </div>
-        <h3>BLACKPINK</h3>
-        <a href="#" class="btn-secondary">View Collection</a>
-      </div>
-      <div class="category-card">
-        <div class="category-img">
-          <img src="https://placehold.co/300x400" alt="BTS Merchandise" />
-        </div>
-        <h3>BTS</h3>
-        <a href="#" class="btn-secondary">View Collection</a>
-      </div>
-      <div class="category-card">
-        <div class="category-img">
-          <img src="https://placehold.co/300x400" alt="TWICE Merchandise" />
-        </div>
-        <h3>TWICE</h3>
-        <a href="#" class="btn-secondary">View Collection</a>
-      </div>
-      <div class="category-card">
-        <div class="category-img">
-          <img src="https://placehold.co/300x400" alt="EXO Merchandise" />
-        </div>
-        <h3>EXO</h3>
-        <a href="#" class="btn-secondary">View Collection</a>
-      </div>
+      @if(Model.FavoriteArtistList != null){
+        @foreach(var favArtist in Model.FavoriteArtistList){
+           <div class="category-card">
+              <div class="category-img">
+                <img src="@favArtist.Image" alt="@favArtist.Name" />
+              </div>
+              <h3>@favArtist.Name</h3>
+              <a asp-controller="Shop" asp-action="Index" asp-route-filter="@favArtist.Name" class="btn-secondary">View Collection</a>
+            </div>
+        }
+      }
     </div>
   </div>
 </section>
@@ -98,90 +83,33 @@
       <p>Curated selection of premium merchandise</p>
     </div>
     <div class="product-grid">
-      <div class="product-card" data-category="new-arrivals popular">
-        <div class="product-img">
-          <img
-            src="/images/product1.jpg"
-            alt="Limited Edition Photobook"
-          />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
+      @if(Model.FeaturedProductList != null){
+        @foreach(var featuredProduct in Model.FeaturedProductList){
+          <div class="product-card" data-category="new-arrivals popular">
+            <div class="product-img">
+              <img
+                src="@featuredProduct.Images[0]"
+                alt="Limited Edition Photobook"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+              <div class="product-badge new">New</div>
+            </div>
+            <div class="product-info">
+              <h3>@featuredProduct.Name</h3>
+              <p class="product-group">@featuredProduct.Artist</p>
+              <p class="product-price">Php @featuredProduct.Price</p>
+            </div>
           </div>
-          <div class="product-badge new">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Limited Edition Photobook</h3>
-          <p class="product-group">BLACKPINK</p>
-          <p class="product-price">$89.99</p>
-        </div>
-      </div>
-      <div class="product-card" data-category="popular most-loved">
-        <div class="product-img">
-          <img src="/images/product1.jpg" alt="Premium Light Stick" />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3>Premium Light Stick</h3>
-          <p class="product-group">BTS</p>
-          <p class="product-price">$129.99</p>
-        </div>
-      </div>
-      <div class="product-card" data-category="new-arrivals">
-        <div class="product-img">
-          <img
-            src="/images/product1.jpg"
-            alt="Collector's Edition Album"
-          />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          </div>
-          <div class="product-badge new">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Collector's Edition Album</h3>
-          <p class="product-group">TWICE</p>
-          <p class="product-price">$79.99</p>
-        </div>
-      </div>
-      <div class="product-card" data-category="most-loved">
-        <div class="product-img">
-          <img src="/images/product2.png" alt="Signature Hoodie" />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3>Signature Hoodie</h3>
-          <p class="product-group">EXO</p>
-          <p class="product-price">$149.99</p>
-        </div>
-      </div>
+        }
+      }
     </div>
     <div class="view-more">
       <a asp-controller="Shop" asp-action="Index" class="btn-primary"
@@ -197,72 +125,33 @@
       <p>Be the first to own these exclusive items</p>
     </div>
     <div class="product-slider">
-      <div class="product-card" data-category="new-arrivals">
-        <div class="product-img">
-          <img
-            src="/images/product2.png"
-            alt="Crystal Embellished Tumbler"
-          />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
+      @if(Model.NewArrivalProductList != null){
+        foreach(var newArrivalProduct in Model.NewArrivalProductList){
+           <div class="product-card" data-category="new-arrivals">
+            <div class="product-img">
+              <img
+                src="@newArrivalProduct.Images[0]"
+                alt="Crystal Embellished Tumbler"
+              />
+              <div class="product-actions">
+                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                <button class="add-to-wishlist">
+                  <i class="far fa-heart"></i>
+                </button>
+                <button class="add-to-cart">
+                  <i class="fas fa-shopping-bag"></i>
+                </button>
+              </div>
+              <div class="product-badge new">New</div>
+            </div>
+            <div class="product-info">
+              <h3>@newArrivalProduct.Name</h3>
+              <p class="product-group">@newArrivalProduct.Artist</p>
+              <p class="product-price">Php @newArrivalProduct.Price</p>
+            </div>
           </div>
-          <div class="product-badge new">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Crystal Embellished Tumbler</h3>
-          <p class="product-group">BLACKPINK</p>
-          <p class="product-price">$69.99</p>
-        </div>
-      </div>
-      <div class="product-card" data-category="new-arrivals">
-        <div class="product-img">
-          <img
-            src="/images/product2.png"
-            alt="Limited Edition Bracelet"
-          />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          </div>
-          <div class="product-badge new">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Limited Edition Bracelet</h3>
-          <p class="product-group">BTS</p>
-          <p class="product-price">$99.99</p>
-        </div>
-      </div>
-      <div class="product-card" data-category="new-arrivals">
-        <div class="product-img">
-          <img src="/images/product2.png" alt="Premium Silk Scarf" />
-          <div class="product-actions">
-            <button class="quick-view"><i class="fas fa-eye"></i></button>
-            <button class="add-to-wishlist">
-              <i class="far fa-heart"></i>
-            </button>
-            <button class="add-to-cart">
-              <i class="fas fa-shopping-bag"></i>
-            </button>
-          </div>
-          <div class="product-badge new">New</div>
-        </div>
-        <div class="product-info">
-          <h3>Premium Silk Scarf</h3>
-          <p class="product-group">TWICE</p>
-          <p class="product-price">$119.99</p>
-        </div>
-      </div>
+        }
+      }
     </div>
   </div>
 </section>

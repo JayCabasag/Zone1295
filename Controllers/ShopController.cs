@@ -18,7 +18,7 @@ public class ShopController : Controller
 
     public async Task<IActionResult> Index(int? pageNumber, int? pageSize, string? orderBy, string? sortBy, string? search)
     {
-        var query = new ProductQueryModel{
+        var query = new QueryModel{
             PageNumber = pageNumber ?? 1,
             PageSize = pageSize ?? 15,
             OrderBy = orderBy ?? "product_id",
@@ -37,6 +37,9 @@ public class ShopController : Controller
         var paged = pagedTask.Result;
 
         var viewModel = new ShopViewModel{
+            Menu = "home",
+            MenuTitle = "Home",
+            SubMenu = "",
             ProductListCount = total,
             Search = search,
             ProductList = new Pagination<Product>(paged, total, query.PageNumber, query.PageSize),

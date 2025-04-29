@@ -24,3 +24,12 @@ CREATE TABLE zone1295_product (
     product_created_at DATETIME DEFAULT CURRENT_TIMESTAMP, -- 🛠 Fixed DEFAULT
     product_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 🛠 Fixed typo and added ON UPDATE
 );
+
+CREATE TABLE zone1295_artist (
+    artist_id INT PRIMARY KEY AUTO_INCREMENT,
+    artist_name VARCHAR(250) NOT NULL,
+    artist_image TEXT NULL,
+    artist_description VARCHAR(250) NOT NULL,
+    artist_created_at DATETIME DEFAULT CURRENT_TIMESTAMP, -- 🛠 Fixed DEFAULT
+    artist_updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 🛠 Fixed typo and added ON UPDATE
+);

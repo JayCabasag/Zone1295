@@ -107,7 +107,7 @@
           </ul>
         </div>
 
-        <div class="filter-group">
+        @* <div class="filter-group">
           <h4>Price Range</h4>
           <div class="price-slider">
             <div class="price-range">
@@ -139,7 +139,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> *@
 
         <div class="filter-section">
           <h3>Collections</h3>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="product-info">
                   <h3>
-                    <a href="product-details.html">@product.Name</a>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">@product.Name</a>
                   </h3>
                   <p class="product-group">@product.Artist</p>
                   <p class="product-price">Php @product.Price</p>
