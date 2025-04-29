@@ -7,10 +7,12 @@ namespace Zone1295.Controllers;
 public class ProductController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ProductRepository _productRepository;
 
-    public ProductController(ILogger<HomeController> logger)
+    public ProductController(ILogger<HomeController> logger, ProductRepository productRepository)
     {
         _logger = logger;
+        _productRepository = productRepository;
     }
 
     public IActionResult Index()
@@ -19,10 +21,12 @@ public class ProductController : Controller
         return View();
     }
 
-    public IActionResult Details()
+    public async Task<IActionResult> Details(int id)
     {
-        ViewData["Title"] = "Details";
-        return View();
+        var model = new ProductViewModel{
+            Product = await _productRepository.GetByIdAsync(id),
+        };
+        return View(model);
     }
 
     public IActionResult Addresses()

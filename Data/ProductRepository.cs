@@ -10,6 +10,56 @@ public class ProductRepository
         _connectionFactory = connectionFactory;
     }
 
+        public async Task<Product?> GetByIdAsync(int productId)
+    {
+        try {
+            using var connection = _connectionFactory.CreateConnection();
+            await connection.OpenAsync();
+
+            const string query = @"
+                SELECT *
+                FROM zone1295_product 
+                WHERE product_id = @productId";
+
+            using var command = connection.CreateCommand();
+            command.CommandText = query;
+            command.Parameters.AddWithValue("@productId", productId);
+
+            using var reader = await command.ExecuteReaderAsync();
+            
+                if (await reader.ReadAsync())
+                {
+                    return new Product
+                    {
+                        Id = reader.GetInt32("product_id"),
+                        Name = reader.IsDBNull("product_name") ? null : reader.GetString("product_name"),
+                        Images = reader.IsDBNull("product_image") ? null : reader.GetString("product_image").Split(","),
+                        Price = reader.IsDBNull("product_price") ? 0 : reader.GetDouble("product_price"),
+                        OnSalePrice = reader.IsDBNull("product_onsale_price") ? 0 : reader.GetDouble("product_onsale_price"),
+                        StockCount = reader.IsDBNull("product_stock_count") ? 0 : reader.GetInt32("product_stock_count"),
+                        Category = reader.IsDBNull("product_category") ? null : reader.GetString("product_category").Split(','),
+                        Artist = reader.IsDBNull("product_artist") ? null : reader.GetString("product_artist"),
+                        IsDeleted = reader.IsDBNull("product_is_deleted") ? null : reader.GetBoolean("product_is_deleted"),
+                        IsBestSelling = reader.IsDBNull("product_is_bestselling") ? null : reader.GetBoolean("product_is_bestselling"),
+                        IsPopular = reader.IsDBNull("product_is_popular") ? null : reader.GetBoolean("product_is_popular"),
+                        IsOnSale = reader.IsDBNull("product_is_onsale") ? null : reader.GetBoolean("product_is_onsale"),
+                        Collection = reader.IsDBNull("product_collection") ? null : reader.GetString("product_collection").Split(','),
+                        CreatedAt = reader.IsDBNull("product_created_at") ? null : reader.GetDateTime("product_created_at"),
+                        UpdatedAt = reader.IsDBNull("product_updated_at") ? null : reader.GetDateTime("product_updated_at"),
+                        Rating = reader.IsDBNull("product_rating") ? null : reader.GetDouble("product_rating"),
+                    };
+                }
+
+                return null; // Product not found
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception here
+                Console.Error.WriteLine($"Error fetching product by ID: {ex.Message}");
+                return null;
+            }
+    }
+
     public async Task<int> GetAllProductsPagedCountAsync(ProductQueryModel queryModel)
     {
         try
@@ -41,7 +91,7 @@ public class ProductRepository
         {
             // Log or handle the exception here
             Console.Error.WriteLine($"Error fetching product count: {ex.Message}");
-            throw new Exception("An error occurred while fetching the product count.", ex); // Rethrow or return a default value
+            return 0;
         }
     }
 

@@ -4,6 +4,10 @@ namespace Zone1295.Models.DataModels
     {
         public int Id { get; set; }
         public string? Name { get; set; }
+        public string? Summary { get; set; }
+        public IEnumerable<string>? Tags { get; set; }
+        public string? Description { get; set; }
+        public string? AdditionalInformation { get; set; }
         public IEnumerable<string>?  Images { get; set; }
         public double Price { get; set; }
         public double OnSalePrice { get; set; }
