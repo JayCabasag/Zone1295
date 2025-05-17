@@ -1,0 +1,50 @@
+@model Zone1295.Models.InputeModels.SignInInputModel
+
+<form class="account-form login-form">
+    <div class="form-group">
+         @Html.AntiForgeryToken()
+        <label for="login-email">Email Address</label>
+        <input
+        type="email"
+        id="login-email"
+        placeholder="Enter your email"
+        required
+        />
+    </div>
+    <div class="form-group">
+        <label for="login-password">Password</label>
+        <div class="password-field">
+        <input
+            type="password"
+            id="login-password"
+            placeholder="Enter your password"
+            required
+        />
+        <button type="button" class="toggle-password">
+            <i class="far fa-eye"></i>
+        </button>
+        </div>
+    </div>
+    <div class="form-options">
+        <span class="checkbox-container">
+        <input type="checkbox" id="remember-me" />
+        <label class="remember-me checkbox-text" for="remember-me">Remember</label>
+        </span>
+        <a href="#" class="forgot-password">Forgot password?</a>
+    </div>
+    <button type="submit" class="btn-primary btn-full">Login</button>
+
+    <div class="social-login">
+        <p>Or login with</p>
+        <div class="social-login-buttons">
+        <button type="button" class="social-btn google">
+            <i class="fab fa-google"></i>
+            <span>Google</span>
+        </button>
+        <button type="button" class="social-btn twitter">
+            <i class="fab fa-x-twitter"></i>
+            <span>x</span>
+        </button>
+        </div>
+    </div>  
+</form>

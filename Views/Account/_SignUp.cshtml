@@ -1,0 +1,62 @@
+@model Zone1295.Models.InputeModels.SignUpInputModel
+
+<form class="account-form register-form">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="register-email">Email Address</label>
+        <input
+        type="email"
+        id="register-email"
+        placeholder="Enter your email"
+        required
+        />
+    </div>
+    <div class="form-group">
+        <label for="register-password">Password</label>
+        <div class="password-field">
+        <input
+            type="password"
+            id="register-password"
+            placeholder="Create a password"
+            required
+        />
+        <button type="button" class="toggle-password">
+            <i class="far fa-eye"></i>
+        </button>
+        </div>
+        <div class="password-strength">
+        <div class="strength-meter">
+            <div class="strength-bar"></div>
+        </div>
+        <p class="strength-text">
+            Password strength: <span>Weak</span>
+        </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <div class="password-field">
+        <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm your password"
+            required
+        />
+        <button type="button" class="toggle-password">
+            <i class="far fa-eye"></i>
+        </button>
+        </div>
+    </div>
+    <div class="form-group checkbox-container">
+        <input type="checkbox" required id="terms" name="terms"/>
+        <label class="checkbox-text" for="terms">I agree to the <a href="#">Terms of Service</a> and
+        <a href="#">Privacy Policy</a></label>
+    </div>
+    <div class="form-group checkbox-container">
+        <input type="checkbox" id="newsletter" name="newsletter" />
+        <label class="checkbox-text" for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
+    </div>
+    <button type="submit" class="btn-primary btn-full">
+        Create Account
+    </button>
+</form>

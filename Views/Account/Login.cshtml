@@ -8,117 +8,13 @@
 
       <div class="tab-content">
         <!-- Login Form -->
-        <div class="tab-pane active" id="login">
-          <form class="account-form login-form">
-            <div class="form-group">
-              <label for="login-email">Email Address</label>
-              <input
-                type="email"
-                id="login-email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="login-password">Password</label>
-              <div class="password-field">
-                <input
-                  type="password"
-                  id="login-password"
-                  placeholder="Enter your password"
-                  required
-                />
-                <button type="button" class="toggle-password">
-                  <i class="far fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="form-options">
-              <span class="checkbox-container">
-                <input type="checkbox" id="remember-me" />
-                <label class="remember-me checkbox-text" for="remember-me">Remember</label>
-              </span>
-              <a href="#" class="forgot-password">Forgot password?</a>
-            </div>
-            <button type="submit" class="btn-primary btn-full">Login</button>
-
-            <div class="social-login">
-              <p>Or login with</p>
-              <div class="social-login-buttons">
-                <button type="button" class="social-btn google">
-                  <i class="fab fa-google"></i>
-                  <span>Google</span>
-                </button>
-                <button type="button" class="social-btn twitter">
-                    <i class="fab fa-x-twitter"></i>
-                    <span>x</span>
-                </button>
-              </div>
-            </div>  
-          </form>
+        <div class="tab-pane active login-form-container" id="login">
+          @await Html.PartialAsync("_SignIn")
         </div>
 
         <!-- Register Form -->
-        <div class="tab-pane" id="register">
-          <form class="account-form register-form">
-            <div class="form-group">
-              <label for="register-email">Email Address</label>
-              <input
-                type="email"
-                id="register-email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="register-password">Password</label>
-              <div class="password-field">
-                <input
-                  type="password"
-                  id="register-password"
-                  placeholder="Create a password"
-                  required
-                />
-                <button type="button" class="toggle-password">
-                  <i class="far fa-eye"></i>
-                </button>
-              </div>
-              <div class="password-strength">
-                <div class="strength-meter">
-                  <div class="strength-bar"></div>
-                </div>
-                <p class="strength-text">
-                  Password strength: <span>Weak</span>
-                </p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="confirm-password">Confirm Password</label>
-              <div class="password-field">
-                <input
-                  type="password"
-                  id="confirm-password"
-                  placeholder="Confirm your password"
-                  required
-                />
-                <button type="button" class="toggle-password">
-                  <i class="far fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="form-group checkbox-container">
-               <input type="checkbox" required id="terms" name="terms"/>
-                <label class="checkbox-text" for="terms">I agree to the <a href="#">Terms of Service</a> and
-                <a href="#">Privacy Policy</a></label>
-            </div>
-            <div class="form-group checkbox-container">
-                <input type="checkbox" id="newsletter" name="newsletter" />
-                <label class="checkbox-text" for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
-            </div>
-            <button type="submit" class="btn-primary btn-full">
-              Create Account
-            </button>
-          </form>
+        <div class="tab-pane register-form-container" id="register">
+          @await Html.PartialAsync("_SignUp")
         </div>
       </div>
     </div>
@@ -176,3 +72,44 @@
     </div>
   </div>
 </section>
+
+@section Scripts {
+  <script>
+    $(document).ready(function () {
+      console.log("Document ready");
+
+      $(".login-form").on("submit", function (e) {
+        e.preventDefault();
+
+            var form = $(this);
+            var token = form.find('input[name="__RequestVerificationToken"]').val();
+            var submitBtn = form.find('button[type="submit"], input[type="submit"]');
+
+            $.ajax({
+                url: "/Account/LoginPartial",
+                method: form.attr("method"),
+                data: form.serialize(),
+                beforeSend: function (xhr) {
+                  submitBtn.prop('disabled', true);
+                },
+                success: function (response) {
+                    $('.login-form').html(response);
+                },
+                error: function (xhr) {
+                    if(xhr.status == 400){
+                      $('.login-form').html(xhr.responseText)
+                    }
+                },
+                complete: function(){
+                  submitBtn.prop('disabled', false);
+                }
+            });
+      });
+
+      $(".register-form").on("submit", function (e) {
+        e.preventDefault();
+        console.log("Register form submitted");
+      });
+    });
+  </script>
+}

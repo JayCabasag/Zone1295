@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using TokenHive.Models.ViewModels;
 using Zone1295.Models;
+using Zone1295.Models.InputeModels;
 
 namespace Zone1295.Controllers;
 
@@ -31,12 +33,6 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult Login()
-    {
-        ViewData["Title"] = "Login";
-        return View();
-    }
-
     public IActionResult Logout()
     {
         ViewData["Title"] = "Logout";
@@ -55,6 +51,35 @@ public class AccountController : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult Login()
+    {
+        ViewData["Title"] = "Login";
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult LoginPartial(SignInInputModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            Response.StatusCode = 400;
+            return PartialView("_SignIn", model); // return with errors
+        }
+
+        // Do authentication logic here (e.g., check credentials)
+        var loginSuccess = true;
+        if (loginSuccess)
+        {
+             ModelState.AddModelError("", "Invalid login attempt.");
+            Response.StatusCode = 400;
+            return PartialView("_SignIn", model); ;
+        }
+
+        ModelState.AddModelError("", "Invalid login attempt.");
+        Response.StatusCode = 400;
+        return PartialView("_SignIn", model);
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

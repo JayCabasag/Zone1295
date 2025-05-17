@@ -680,23 +680,6 @@
     }
   });
 
-  // Form Submission
-  $(".login-form").submit(function (e) {
-    e.preventDefault();
-
-    // Here you would typically send the form data to a server for authentication
-    // For demonstration, we'll just redirect to the account dashboard
-    window.location.href = "account-dashboard.html";
-  });
-
-  $(".register-form").submit(function (e) {
-    e.preventDefault();
-
-    // Here you would typically send the form data to a server for registration
-    // For demonstration, we'll just redirect to the account dashboard
-    window.location.href = "account-dashboard.html";
-  });
-
   // Dashboard Navigation
   $(".dashboard-nav a").click(function (e) {
     if (!$(this).parent().hasClass("logout")) {
