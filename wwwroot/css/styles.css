@@ -1588,12 +1588,12 @@ footer {
 .checkbox-container {
   display: flex;
   align-items: center;
+  justify-content: left;
   gap: 12px;
 }
 
 .checkbox-container input {
-  width: auto;
-  margin-top: 3px;
+  width: auto !important;
 }
 
 .checkbox-container label {
@@ -2214,17 +2214,6 @@ footer {
   position: relative;
 }
 
-.toggle-password {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: var(--light-text);
-  cursor: pointer;
-}
-
 .form-options {
   display: flex;
   justify-content: space-between;
@@ -2326,6 +2315,19 @@ footer {
 .strength-text span {
   color: #ff4d4d;
   font-weight: 500;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9488de;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
 }
 
 .account-benefits {

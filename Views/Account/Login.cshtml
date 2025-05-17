@@ -43,7 +43,7 @@
             <div class="form-options">
               <span class="checkbox-container">
                 <input type="checkbox" id="remember-me" />
-                <label class="remember-me" for="remember-me">Remember</label>
+                <label class="remember-me checkbox-text" for="remember-me">Remember</label>
               </span>
               <a href="#" class="forgot-password">Forgot password?</a>
             </div>
@@ -133,20 +133,14 @@
                 </button>
               </div>
             </div>
-            <div class="form-group">
-              <label class="checkbox-container">
-                <input type="checkbox" required />
-                <span class="checkmark"></span>
-                I agree to the <a href="#">Terms of Service</a> and
-                <a href="#">Privacy Policy</a>
-              </label>
+            <div class="form-group checkbox-container">
+               <input type="checkbox" required id="terms" name="terms"/>
+                <label class="checkbox-text" for="terms">I agree to the <a href="#">Terms of Service</a> and
+                <a href="#">Privacy Policy</a></label>
             </div>
-            <div class="form-group">
-              <label class="checkbox-container">
-                <input type="checkbox" />
-                <span class="checkmark"></span>
-                Subscribe to our newsletter for exclusive offers and updates
-              </label>
+            <div class="form-group checkbox-container">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <label class="checkbox-text" for="newsletter">Subscribe to our newsletter for exclusive offers and updates</label>
             </div>
             <button type="submit" class="btn-primary btn-full">
               Create Account
